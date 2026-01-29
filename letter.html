@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffd6e8, #e7c6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+    animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: #d63384;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 6px;
+    color: #555;
+}
+
+/* Message */
+.message {
+    margin-top: 25px;
+    color: #333;
+    line-height: 1.7;
+    font-size: 1.05em;
+}
+
+/* Highlight */
+.highlight {
+    background: linear-gradient(transparent 60%, #ffd1e8 60%);
+}
+
+/* Button */
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 999px;
+    font-size: 1em;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff5fa2, #d63384);
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Shanelle 💖</h1>
+    <div class="subtitle">this is not a letter.</div>
+
+    <div class="message">
+        <div class="message">
+    I don’t really know where moments like this are supposed to begin.
+    But I do know one thing you’re someone who quietly became important
+    without ever forcing your way in.
+
+    <br><br>
+
+    Being with you has changed how I look at my days.
+    Things that used to feel heavy feel lighter.
+    Things that felt rushed now feel calmer.
+    Even the boring parts of life feel meaningful when I know
+    you’re part of it.
+
+    <br><br>
+
+    I appreciate the way you stay.
+    Not just on the good days, but also when things are messy,
+    confusing, or not perfect.
+    That kind of presence matters more than big words or promises.
+
+    <br><br>
+
+    <span class="highlight">
+        You don’t just make me happy, you make me feel understood.
+    </span>
+
+    <br><br>
+
+    I don’t need to exaggerate what this is.
+    I just know that choosing you feels natural.
+    Like something that doesn’t need to be explained,
+    because it already feels right.
+
+    <br><br>
+
+    And if the world gets loud,
+    or days get tiring,
+    I hope you remember this:
+    you are appreciated,
+    you are wanted,
+    and you matter — to me.
+</div>
+
+
+    
+    </div>
+
+    <button onclick="goBack()">⬅ Back to the start</button>
+</div>
+
+<script>
+function goBack() {
+    window.location.href = "index.html";
+}
+
+/* Floating hearts generator */
+const hearts = ["💖","💗","💘","💞"];
+setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = Math.random() * 10 + 16 + "px";
+    document.body.appendChild(h);
+
+    setTimeout(() => h.remove(), 6000);
+}, 600);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Memories 💞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    background:
+      radial-gradient(circle at top, rgba(255,192,203,0.35), transparent 45%),
+      radial-gradient(circle at bottom, rgba(186,85,211,0.3), transparent 45%),
+      linear-gradient(180deg, #fff0f7, #fbefff);
+    font-family: Arial, sans-serif;
+    color: #d63384;
+    text-align: center;
+    padding: 40px 20px;
+    transition: opacity 0.8s ease;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: fadeUp 1.2s ease;
+}
+
+button {
+    margin-top: 60px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #d63384;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #b82d6f;
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+<h1>Our Memories Together 💖</h1>
+
+<div class="gallery">
+    <img src="Pic/WhatsApp Image 2026-01-29 at 9.59.18 PM.jpeg">
+    <img src="Pic/WhatsApp Image 2026-01-29 at 9.35.27 PM.jpeg">
+    <img src="Pic/WhatsApp Image 2026-01-29 at 10.01.23 PM.jpeg">
+</div>
+
+<p style="margin-top:40px;">Press the button to see the letter</p>
+
+<button onclick="goLetter()">Read The Letter 💌</button>
+
+<script>
+function goLetter() {
+    document.body.style.opacity = "0";
+    setTimeout(() => {
+        window.location.href = "letter.html";
+    }, 800);
+}
+</script>
+</body>
+</html>
